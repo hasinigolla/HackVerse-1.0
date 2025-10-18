@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Blood Connect</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body, html {
+      height: 100%;
+      font-family: 'Roboto', sans-serif;
+    }
+    .hero {
+      height: 100vh;
+      background-image: url('1234.jpg');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      color: white;
+    }
+    .overlay {
+      background: rgba(0, 0, 0, 0.4); /* slightly darker overlay */
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .navbar {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: rgba(255, 102, 102, 0.85); /* semi-transparent */
+      z-index: 2;
+    }
+    .logo {
+      display: flex;
+      flex-direction: column;
+    }
+    .logo h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      font-weight: bold;
+      color: #fff;
+    }
+    .logo p {
+      font-size: 16px;
+      color: #fcecec;
+    }
+    .user-info {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+    .user-email {
+      font-weight: bold;
+      margin-bottom: 5px;
+      font-size: 16px;
+    }
+    .user-actions {
+      display: flex;
+      gap: 15px;
+    }
+    .user-actions a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+    .user-actions a:hover {
+      color: #cce6ff;
+    }
+    .title-center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      z-index: 2;
+      width: 100%;
+    }
+    .features {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .feature-box {
+      background-color: rgba(255, 255, 255, 0.2);
+      padding: 15px;
+      border-radius: 15px;
+      backdrop-filter: blur(6px);
+      text-align: center;
+      transition: 0.3s;
+      box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+      width: 150px;
+    }
+    .feature-box:hover {
+      background-color: rgba(255, 255, 255, 0.5);
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(255, 255, 255, 0.5);
+    }
+    .feature-box img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+      border: 3px solid white;
+    }
+    .feature-box span {
+      display: block;
+      font-weight: bold;
+      font-size: 16px;
+      color: #fff;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    }
+    .feature-box a {
+      text-decoration: none;
+      color: inherit;
+    }
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .user-info {
+        align-items: flex-start;
+        margin-top: 10px;
+      }
+      .user-actions {
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="overlay"></div>
+    <div class="navbar">
+      <div class="logo">
+        <h1>BLOOD CONNECT</h1>
+        <p>Saving lives, one drop at a time!</p>
+      </div>
+      <div class="user-info">
+        <div class="user-email" id="userEmail"></div>
+        <div class="user-actions">
+          <a href="profile.html">Profile</a>
+          <a href="logout.html">Logout</a>
+        </div>
+      </div>
+    </div>
+    <div class="title-center">
+      <div class="features">
+        <div class="feature-box"><a href="requestBlood.html"><img src="reqB.jpg" alt="Request Blood"><span>Request Blood</span></a></div>
+        <div class="feature-box"><a href="availableDonors.html"><img src="availD.jpg" alt="Available Donors"><span>Available Donors</span></a></div>
+        <div class="feature-box"><a href="liveTracking.html"><img src="liveTracking.jpg" alt="Live Tracking"><span>Live Tracking</span></a></div>
+        <div class="feature-box"><a href="pickUpDropIn.html"><img src="pickUp.jpg" alt="Transportation"><span>Need Transportation?</span></a></div>
+        <div class="feature-box"><a href="KnowMoreAboutBloodGroups.html"><img src="knowMore.jpg" alt="Blood Info"><span>Know More About Blood Groups</span></a></div>
+        <div class="feature-box"><a href="donateBloodButWhy.html"><img src="whyD.jpg" alt="Why To Donate?"><span>Why to Donate?</span></a></div>
+        <div class="feature-box"><a href="medications.html"><img src="medications.jpg" alt="Medications"><span>Medications To Be Taken</span></a></div>
+        <div class="feature-box"><a href="history.html"><img src="history.jpg" alt="History"><span>History</span></a></div>
+        <div class="feature-box"><a href="feedback.html"><img src="feedback.jpg" alt="Leave your feedback"><span>Leave your feedback</span></a></div>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const token = localStorage.getItem("token");
+        if (!token) window.location.href = "signin.html";
+
+        const userEmail = localStorage.getItem("userEmail");
+        if (userEmail) document.getElementById("userEmail").innerText = userEmail;
+    });
+  </script>
+</body>
+</html>

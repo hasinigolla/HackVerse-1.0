@@ -1,0 +1,105 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - BLOOD CONNECT</title>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background: linear-gradient(135deg, #d83a3a, #8b1e1e);
+        text-align: center;
+    }
+    .login-box {
+        background: #fff8e3;
+        padding: 40px 50px;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        width: 400px;
+    }
+    .title {
+        font-family: 'Lobster', cursive;
+        font-size: 3rem;
+        color: #d83a3a;
+        margin-bottom: 20px;
+    }
+    .input-field {
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0;
+        border: 2px solid #d83a3a;
+        border-radius: 10px;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1rem;
+        outline: none;
+    }
+    .login-btn {
+        width: 100%;
+        padding: 15px;
+        margin-top: 20px;
+        border: none;
+        border-radius: 50px;
+        background: #d83a3a;
+        color: #fff8e3;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+    .login-btn:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 15px rgba(216, 58, 58, 0.8);
+    }
+    .footer {
+        margin-top: 20px;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.9rem;
+    }
+    .footer a {
+        color: #3a7ca5;
+        text-decoration: none;
+    }
+</style>
+</head><body>
+    <div class="login-box">
+        <h1 class="title">Login</h1>
+        <form id="loginForm">
+            <input type="email" id="email" name="email" placeholder="Email" class="input-field" required>
+            <input type="password" id="password" name="password" placeholder="Password" class="input-field" required>
+            <button type="submit" class="login-btn">Login</button>
+        </form>
+        <div class="footer">
+            <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+            <p><a href="mainpage.html">Back to Home</a></p>
+        </div>
+    </div><script>
+    document.getElementById("loginForm").addEventListener("submit", async function (event) {
+        event.preventDefault();
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+        try {
+            const response = await fetch("http://localhost:5000/api/auth/login", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ 
+		email: email,
+		password: password 
+		}),
+            });
+            const data = await response.json();
+            if (response.ok) {
+                localStorage.setItem("token", data.token);
+                localStorage.setItem("userEmail", email);
+                window.location.href = "features.html";
+            } else {
+                alert(data.message);
+            }
+        } catch (error) {
+	    console.error("Fetch Error:",error);
+            alert("Error connecting to the server. Please try again.");
+        }
+    });
+</script>
+</body></html>

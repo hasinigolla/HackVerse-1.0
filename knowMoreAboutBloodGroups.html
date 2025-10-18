@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blood Compatibility - BLOOD CONNECT</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet"/>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 40px;
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, #d83a3a, #8b1e1e);
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+    }
+
+    .compatibility-box {
+      background: #fff8e3;
+      border-radius: 15px;
+      padding: 30px 40px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      width: 90%;
+      max-width: 800px;
+      text-align: center;
+    }
+
+    .title {
+      font-family: 'Lobster', cursive;
+      font-size: 2.5rem;
+      color: #d83a3a;
+      margin-bottom: 25px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      border: 2px solid #d83a3a;
+      padding: 12px 10px;
+      text-align: center;
+      font-size: 1rem;
+    }
+
+    th {
+      background-color: #d83a3a;
+      color: #fff8e3;
+    }
+
+    tr:nth-child(even) {
+      background-color: #fdebd3;
+    }
+
+    tr:hover {
+      background-color: #fcd4b5;
+    }
+
+    .donate {
+      color: #2e7d32;
+      font-weight: 600;
+    }
+
+    .receive {
+      color: #1565c0;
+      font-weight: 600;
+    }
+
+    .footer {
+      margin-top: 20px;
+      font-size: 0.9rem;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9rem;
+      color: #333;
+      margin-top: 30px;
+    }
+
+    @media(max-width: 600px) {
+      th, td {
+        font-size: 0.85rem;
+        padding: 8px 5px;
+      }
+
+      .title {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="compatibility-box">
+    <h1 class="title">Blood Donation Compatibility</h1>
+
+    <table>
+      <tr>
+        <th>Blood Group</th>
+        <th>Can Donate To</th>
+        <th>Can Receive From</th>
+      </tr>
+      <tr>
+        <td>O−</td>
+        <td class="donate">All blood groups (Universal Donor)</td>
+        <td class="receive">O− only</td>
+      </tr>
+      <tr>
+        <td>O+</td>
+        <td class="donate">O+, A+, B+, AB+</td>
+        <td class="receive">O+, O−</td>
+      </tr>
+      <tr>
+        <td>A−</td>
+        <td class="donate">A−, A+, AB−, AB+</td>
+        <td class="receive">A−, O−</td>
+      </tr>
+      <tr>
+        <td>A+</td>
+        <td class="donate">A+, AB+</td>
+        <td class="receive">A+, A−, O+, O−</td>
+      </tr>
+      <tr>
+        <td>B−</td>
+        <td class="donate">B−, B+, AB−, AB+</td>
+        <td class="receive">B−, O−</td>
+      </tr>
+      <tr>
+        <td>B+</td>
+        <td class="donate">B+, AB+</td>
+        <td class="receive">B+, B−, O+, O−</td>
+      </tr>
+      <tr>
+        <td>AB−</td>
+        <td class="donate">AB−, AB+</td>
+        <td class="receive">AB−, A−, B−, O−</td>
+      </tr>
+      <tr>
+        <td>AB+</td>
+        <td class="donate">AB+ only</td>
+        <td class="receive">All blood groups (Universal Receiver)</td>
+      </tr>
+    </table>
+
+    <div class="footer">
+      <p><a href="features.html">Back to Home</a></p>
+    </div>
+  </div>
+
+</body>
+</html>

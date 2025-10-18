@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - BLOOD CONNECT</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #d83a3a, #8b1e1e);
+            text-align: center;
+            overflow: hidden;
+        }
+        .slide-in {
+            animation: slideIn 0.8s ease-out forwards;
+        }
+        @keyframes slideIn {
+            from {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        .signup-box {
+            background: #fff8e3;
+            padding: 20px 30px;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            width: 350px;
+        }
+        .title {
+            font-family: 'Lobster', cursive;
+            font-size: 2rem;
+            color: #d83a3a;
+            margin-bottom: 15px;
+        }
+        .input-field {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 2px solid #d83a3a;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+            outline: none;
+            box-sizing: border-box;
+        }
+        .signup-btn {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 30px;
+            background: #d83a3a;
+            color: #fff8e3;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        .signup-btn:hover {
+            transform: scale(1.03);
+        }
+        .footer {
+            margin-top: 10px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem;
+        }
+
+        .footer a {
+            color: #3a7ca5;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            color: #f4a261;
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-box slide-in">
+        <h1 class="title">Sign Up</h1>
+        <form id="signupForm">
+            <input type="text" id="first_name" placeholder="First Name" class="input-field" required>
+            <input type="text" id="last_name" placeholder="Last Name" class="input-field" required>
+            <input type="text" id="email" placeholder="Email" class="input-field" required>
+            <input type="date" id="dob" placeholder="Date of Birth" class="input-field" required>
+            <input type="number" id="weight" placeholder="Weight (kg)" class="input-field" required>
+            <input type="text" id="aadhar" placeholder="Aadhar Card Number" class="input-field" required>
+            <input type="tel" id="phone" placeholder="Phone Number" class="input-field" required>
+            <select id="gender" class="input-field" required>
+                <option value="">Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+            <select id="blood_type" class="input-field" required>
+                <option value="">Blood Type</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+            </select>
+            <input type="text" id="address" placeholder="Residential Address" class="input-field" required>
+            <input type="password" id="password" placeholder="Password" class="input-field" required>
+            <input type="password" id="confirm_password" placeholder="Confirm Password" class="input-field" required>
+            <button type="submit" class="signup-btn">Submit</button>
+        </form>
+        <div class="footer">
+            <p>Already have an account? <a href="signin.html">Login</a></p>
+            <p><a href="mainpage.html">Back to Home</a></p>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("signupForm").addEventListener("submit", async (event) => {
+                event.preventDefault();
+                const first_name = document.getElementById("first_name").value.trim();
+                const last_name = document.getElementById("last_name").value.trim();
+                const email = document.getElementById("email").value.trim();
+                const dob = document.getElementById("dob").value.trim();
+                const weight = document.getElementById("weight").value.trim();
+                const aadhar = document.getElementById("aadhar").value.trim();
+                const phone = document.getElementById("phone").value.trim();
+                const gender = document.getElementById("gender").value.trim();
+                const blood_type = document.getElementById("blood_type").value.trim();
+                const address = document.getElementById("address").value.trim();
+                const password = document.getElementById("password").value.trim();
+                const confirm_password = document.getElementById("confirm_password").value.trim();
+                if (!first_name || !last_name || !email || !dob || !weight || !aadhar || !phone || !gender || !blood_type || !address || !password || !confirm_password) {
+                    alert("All fields are required!");
+                    return;
+                }
+                if (password !== confirm_password) {
+                    alert("Passwords do not match!");
+                    return;
+                }
+                const userData = {
+                    first_name,
+                    last_name,
+                    email,
+                    dob,
+                    weight,
+                    aadhar,
+                    phone,
+                    gender,
+                    blood_type,
+                    address,
+                    password
+                };
+                try {
+                    const response = await fetch("http://localhost:5000/api/auth/signup", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify(userData),
+                    });
+                    const result = await response.json();
+                    if (response.ok) {
+                        alert(result.message);
+                        window.location.href = "signin.html";
+                    } else {
+                        alert(result.message);
+                    }
+                } catch (error) {
+                    console.error("Signup Error:", error);
+                    alert("Something went wrong. Please try again later.");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

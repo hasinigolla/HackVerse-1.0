@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Why Donate Blood - BLOOD CONNECT</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, #d83a3a, #8b1e1e);
+      color: #333;
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px;
+      min-height: 100vh;
+    }
+    .container {
+      background: #fff8e3;
+      border-radius: 25px;
+      padding: 50px 60px;
+      width: 95%;
+      max-width: 1200px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+      text-align: center;
+    }
+    .title {
+      font-family: 'Lobster', cursive;
+      font-size: 3rem;
+      color: #d83a3a;
+      margin-bottom: 20px;
+    }
+    .intro {
+      font-size: 1.15rem;
+      line-height: 1.7;
+      margin-bottom: 40px;
+      color: #333;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+      margin-bottom: 40px;
+    }
+    .card {
+      background: #fff1e0;
+      border-left: 6px solid #d83a3a;
+      border-radius: 15px;
+      padding: 25px 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: left;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+    .card i {
+      color: #d83a3a;
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+    .card h3 {
+      margin-top: 0;
+      color: #d83a3a;
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+    .card p {
+      margin: 0;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    .stats {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin-bottom: 40px;
+    }
+    .stat {
+      background: #d83a3a;
+      color: #fff8e3;
+      padding: 20px 25px;
+      margin: 10px;
+      border-radius: 15px;
+      width: 220px;
+      font-weight: 600;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+      transition: transform 0.2s ease;
+    }
+    .stat:hover {
+      transform: scale(1.05);
+    }
+    .stat h4 {
+      margin: 0 0 10px;
+      font-size: 1.2rem;
+    }
+    .stat p {
+      margin: 0;
+      font-size: 1rem;
+    }
+    .footer {
+      margin-top: 20px;
+      font-size: 0.95rem;
+    }
+    .footer a {
+      color: #333;
+      text-decoration: none;
+    }
+    @media(max-width: 1024px) {
+      .cards {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    @media(max-width: 768px) {
+      .cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media(max-width: 500px) {
+      .cards {
+        grid-template-columns: 1fr;
+      }
+      .stat {
+        width: 80%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">Why Donate Blood?</h1>
+    <p class="intro">
+      Blood donation is a simple, selfless act that saves lives every day. Your donation can help patients during emergencies, support medical treatments, and strengthen your community’s health system.
+    </p>
+    <div class="cards">
+      <div class="card"><i class="fas fa-heartbeat"></i><h3>Save Lives</h3><p>Your blood can help accident victims, surgery patients, and people with chronic illnesses. Every donation counts!</p></div>
+      <div class="card"><i class="fas fa-ambulance"></i><h3>Emergency Preparedness</h3><p>Hospitals need a constant supply of blood for emergencies. Your donation ensures help is available when it’s needed most.</p></div>
+      <div class="card"><i class="fas fa-hospital"></i><h3>Support Hospitals</h3><p>Blood donation keeps local hospitals stocked and ready for patients of all ages.</p></div>
+      <div class="card"><i class="fas fa-users"></i><h3>Community Support</h3><p>Donating blood helps your community thrive and strengthens social solidarity.</p></div>
+      <div class="card"><i class="fas fa-burn"></i><h3>Burn & Trauma Patients</h3><p>Your donation can save patients suffering from burns or severe trauma who need blood urgently.</p></div>
+      <div class="card"><i class="fas fa-stethoscope"></i><h3>Medical Treatments</h3><p>Blood is crucial for cancer patients, organ transplants, and other critical medical procedures.</p></div>
+      <div class="card"><i class="fas fa-hand-holding-heart"></i><h3>Promote Volunteerism</h3><p>Donating blood encourages a culture of giving and volunteerism in your community.</p></div>
+      <div class="card"><i class="fas fa-seedling"></i><h3>Encourage Healthy Habits</h3><p>Donors get regular health check-ups and learn more about their own health status.</p></div>
+      <div class="card"><i class="fas fa-heart-circle-plus"></i><h3>Universal Need</h3><p>Blood is always in demand, and your donation can help any patient in need regardless of age or condition.</p></div>
+      <div class="card"><i class="fas fa-globe"></i><h3>Global Impact</h3><p>Your donation contributes to reducing worldwide blood shortages and supports international emergencies.</p></div>
+      <div class="card"><i class="fas fa-handshake"></i><h3>Community Solidarity</h3><p>Helps strengthen trust and collaboration within communities through altruistic acts.</p></div>
+      <div class="card"><i class="fas fa-brain"></i><h3>Awareness & Education</h3><p>Encourages awareness about health, blood needs, and the importance of volunteering.</p></div>
+    </div>
+    <div class="stats">
+      <div class="stat"><h4>1 Donation</h4><p>Can save up to 3 lives</p></div>
+      <div class="stat"><h4>Every 2 Seconds</h4><p>Someone needs blood</p></div>
+      <div class="stat"><h4>Blood Shortage</h4><p>Occurs globally every day</p></div>
+      <div class="stat"><h4>Universal Donor</h4><p>O− can help anyone in need</p></div>
+    </div>
+    <div class="footer">
+      <p><a href="features.html">Back to Home</a></p>
+    </div>
+  </div>
+</body>
+</html>

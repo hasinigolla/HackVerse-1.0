@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLOOD CONNECT</title>
+	
+    <!-- Google Fonts (Brush Font for Title and Caption) -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+    <style>
+        /* Page Styling */
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: #d83a3a; /* Blood red background */
+            text-align: center;
+        }
+
+        /* Main Title with Brush Font and 3D Effect */
+        .title {
+            font-family: 'Pacifico', cursive; /* Brush font */
+            font-size: 6rem;
+            font-weight: bold;
+            color: #fff8e3; /* Main text color */
+            position: relative;
+            text-shadow: 8px 8px 0 #3a7ca5, /* Blue shadow */
+                         16px 16px 0 #f4a261; /* Orange shadow */
+            margin: 0;
+        }
+
+        /* Caption Styling (Brush Font) */
+        .caption {
+            font-family: 'Pacifico', cursive; /* Brush font */
+            font-size: 2.5rem;
+            color: #fff8e3;
+            margin: 40px 0; /* Space between title and caption */
+            text-transform: capitalize;
+        }
+
+        /* Navigation Button Container */
+        .nav-container {
+            display: flex;
+            gap: 20px; /* Space between buttons */
+        }
+
+        /* Navigation Button Styling */
+        .nav-btn {
+            text-decoration: none;
+            padding: 15px 30px;
+            border: 3px solid #fff8e3;
+            border-radius: 50px;
+            font-size: 1.5rem;
+            color: #fff8e3;
+            text-transform: uppercase;
+            transition: all 0.3s ease; /* Smooth hover animation */
+        }
+
+        /* Hover Effect for Navigation Buttons */
+        .nav-btn:hover {
+            background: #fff8e3;
+            color: #d83a3a;
+            box-shadow: 0 0 20px rgba(255, 248, 227, 0.8);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Main Title (Brush Font + 3D Effect) -->
+    <h1 class="title">BLOOD CONNECT</h1>
+
+    <!-- Caption (Brush Font) -->
+    <p class="caption">Save Your Soul!</p>
+
+    <!-- Navigation Buttons (Hoverable) -->
+    <div class="nav-container">
+        <a href="signin.html" class="nav-btn">Sign In</a>
+        <a href="signup.html" class="nav-btn">Sign Up</a>
+    </div>
+
+</body>
+
+</html>
