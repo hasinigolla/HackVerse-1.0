@@ -16,6 +16,3 @@ Future Enhancements - BLOOD CONNECT aims to evolve continuously with advanced fe
 
 Team and Coordinators - This project was developed by a dedicated team of students from Gayatri Vidya Parishad College of Engineering, Vizag, by P. Sai Babu, G Yogitha Jyothirmai, K Poojitha and G.V.D. Hasini.
 The team includes coordinators for frontend design, backend development, database management, and documentation.
-
-me
-📍 Institution: Gayatri Vidya Parishad College of Engineering, Vizag
