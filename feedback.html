@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Feedback - BLOOD CONNECT</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: linear-gradient(135deg, #d83a3a, #8b1e1e);
+      font-family: 'Montserrat', sans-serif;
+    }
+    .feedback-box {
+      background: #fff8e3;
+      padding: 25px 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      width: 350px;
+      text-align: center;
+    }
+    .title {
+      font-family: 'Lobster', cursive;
+      font-size: 2.2rem;
+      color: #d83a3a;
+      margin-bottom: 20px;
+    }
+    .input-field, select, textarea {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 8px;
+      margin: 8px 0;
+      border: 2px solid #d83a3a;
+      border-radius: 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.9rem;
+      outline: none;
+      resize: none;
+      background: white;
+    }
+    textarea {
+      min-height: 80px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 15px;
+      border: none;
+      border-radius: 50px;
+      background: #d83a3a;
+      color: #fff8e3;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(216, 58, 58, 0.8);
+    }
+    .thank-you {
+      text-align: center;
+      margin-top: 15px;
+      color: green;
+      font-weight: bold;
+      display: none;
+    }
+    .footer {
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9rem;
+      color: #333;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="feedback-box">
+    <h1 class="title">Feedback</h1>
+    <form id="feedbackForm">
+      <input type="text" id="name" name="name" placeholder="Name (optional)" class="input-field">
+      <input type="email" id="email" name="email" placeholder="Email (optional)" class="input-field">
+      <select id="type" name="type" class="input-field" required>
+        <option value="">Feedback Type</option>
+        <option value="suggestion">Suggestion</option>
+        <option value="complaint">Complaint</option>
+        <option value="compliment">Compliment</option>
+        <option value="other">Other</option>
+      </select>
+      <select id="rating" name="rating" class="input-field" required>
+        <option value="">Rate Us</option>
+        <option value="5">★★★★★</option>
+        <option value="4">★★★★☆</option>
+        <option value="3">★★★☆☆</option>
+        <option value="2">★★☆☆☆</option>
+        <option value="1">★☆☆☆☆</option>
+      </select>
+      <textarea id="message" name="message" placeholder="Write your feedback here..." class="input-field" required></textarea>
+      <button type="submit">Submit Feedback</button>
+    </form>
+    <div class="thank-you" id="thankYouMsg">Thank you for your feedback!</div>
+    <div class="footer">
+      <p><a href="features.html">Back to Home</a></p>
+    </div>
+  </div>
+  </div>
+  <script>
+    const form = document.getElementById("feedbackForm");
+    const thankYou = document.getElementById("thankYouMsg");
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+      const feedbackData = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        type: document.getElementById("type").value,
+        rating: document.getElementById("rating").value,
+        message: document.getElementById("message").value,
+      };
+      try {
+        const response = await fetch("http://localhost:5000/api/feedback", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(feedbackData),
+        });
+        if (response.ok) {
+          thankYou.style.display = "block";
+          form.reset();
+        } else {
+          alert("Failed to submit feedback.");
+        }
+      } catch (error) {
+        console.error("Error:", error);
+        alert("Server error. Try again later.");
+      }
+    });
+  </script>
+</body>
+</html>

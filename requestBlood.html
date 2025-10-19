@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Request Blood - BLOOD CONNECT</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: linear-gradient(135deg, #d83a3a, #8b1e1e);
+      font-family: 'Montserrat', sans-serif;
+    }
+    .request-box {
+      background: #fff8e3;
+      padding: 20px 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      width: 340px;
+      text-align: center;
+    }
+    .title {
+      font-family: 'Lobster', cursive;
+      font-size: 2.2rem;
+      color: #d83a3a;
+      margin-bottom: 15px;
+    }
+    .input-field {
+      width: 100%;
+      padding: 8px;
+      margin: 8px 0;
+      border: 2px solid #d83a3a;
+      border-radius: 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.9rem;
+      outline: none;
+    }
+     .input-field, select, textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px;
+  margin: 8px 0;
+  border: 2px solid #d83a3a;
+  border-radius: 8px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  outline: none;
+  resize: none; /* prevents textarea from being resized manually */
+}
+
+    .submit-btn {
+      width: 100%;
+      padding: 10px;
+      margin-top: 15px;
+      border: none;
+      border-radius: 50px;
+      background: #d83a3a;
+      color: #fff8e3;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    .submit-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(216, 58, 58, 0.8);
+    }
+    .footer {
+      margin-top: 15px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8rem;
+    }
+    .footer a {
+       color: #333;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="request-box">
+    <h1 class="title">Request Blood</h1>
+    <form id="requestForm">
+      <input type="text" id="name" name="name" placeholder="Full Name" class="input-field" required>
+      <input type="email" id="email" name="email" placeholder="Email" class="input-field" required>
+      <input type="tel" id="phone" name="phone" placeholder="Phone Number" class="input-field" required>
+      <select id="bloodType" name="bloodType" class="input-field" required>
+        <option value="">Select Blood Type</option>
+        <option value="A+">A+</option>
+        <option value="A-">A-</option>
+        <option value="B+">B+</option>
+        <option value="B-">B-</option>
+        <option value="O+">O+</option>
+        <option value="O-">O-</option>
+        <option value="AB+">AB+</option>
+        <option value="AB-">AB-</option>
+      </select>
+      <input type="number" id="quantity" name="quantity" placeholder="Required Quantity (in units)" class="input-field" required>
+      <textarea id="notes" name="notes" placeholder="Emergency Notes" class="input-field" rows="3"></textarea>
+      <button type="submit" class="submit-btn">Submit Request</button>
+    </form>
+    <div class="footer">
+      <p><a href="features.html">Back to Home</a></p>
+    </div>
+  </div>
+  <script>
+    document.getElementById("requestForm").addEventListener("submit", async function (event) {
+      event.preventDefault();
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const phone = document.getElementById("phone").value;
+      const bloodType = document.getElementById("bloodType").value;
+      const quantity = document.getElementById("quantity").value;
+      const notes = document.getElementById("notes").value;
+      try {
+        const response = await fetch("http://localhost:5000/api/blood-request", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ 
+            name: name,
+            email: email,
+            phone: phone,
+            bloodType: bloodType,
+            quantity: quantity,
+            notes: notes
+          }),
+        });
+        const data = await response.json();
+        if (response.ok) {
+          alert("Request submitted successfully");
+	document.getElementById("requestForm").reset();
+        } else {
+          alert(data.message);
+        }
+      } catch (error) {
+        console.error("Fetch Error:", error);
+        alert("Error submitting request. Please try again.");
+      }
+    });
+  </script>
+</body>
+</html>

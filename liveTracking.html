@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Live Tracking - BLOOD CONNECT</title>
+
+  <!-- Leaflet Map Library -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+
+  <!-- Styling -->
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: #f8f9fa;
+      text-align: center;
+    }
+
+    header {
+      background: #e74c3c;
+      color: white;
+      padding: 15px;
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    #map {
+      width: 100%;
+      height: 85vh;
+      margin-top: 5px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    #status {
+      margin: 10px;
+      font-weight: 500;
+      color: #333;
+    }
+
+    .btn {
+      background: #e74c3c;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 15px;
+      transition: background 0.3s;
+      margin-bottom: 8px;
+    }
+
+    .btn:hover {
+      background: #c0392b;
+    }
+  </style>
+</head>
+<body>
+
+  <header>🩸 Live Donor Tracking - BLOOD CONNECT</header>
+
+  <div id="status">Waiting for location permission...</div>
+  <button class="btn" onclick="enableLiveTracking()">Enable Live Tracking</button>
+  <div id="map"></div>
+
+  <script>
+    // 🩸 Backend URL (same as your Express server)
+    const BACKEND_URL = window.location.origin; // auto uses http://localhost:5000
+
+    // Get user email from localStorage or prompt
+    const userEmail = localStorage.getItem("userEmail") || prompt("Enter your registered email:");
+    if (userEmail) localStorage.setItem("userEmail", userEmail);
+
+    let map;
+    let userMarker;
+    let allMarkers = [];
+
+    // Initialize map centered on India
+    function initMap() {
+      map = L.map('map').setView([20.5937, 78.9629], 5);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+      }).addTo(map);
+
+      loadAllLocations();
+    }
+
+    // ✅ Function to enable live tracking (updates your location)
+    function enableLiveTracking() {
+      if (!navigator.geolocation) {
+        alert("❌ Your browser does not support location tracking.");
+        return;
+      }
+
+      document.getElementById("status").innerText = "📍 Tracking your location...";
+      navigator.geolocation.watchPosition(updateMyLocation, handleLocationError, { enableHighAccuracy: true });
+    }
+
+    // ✅ Update your live location to the backend
+    async function updateMyLocation(position) {
+      const latitude = position.coords.latitude;
+      const longitude = position.coords.longitude;
+
+      try {
+        const response = await fetch(`${BACKEND_URL}/api/update-location`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email: userEmail, latitude, longitude }),
+        });
+
+        const data = await response.json();
+        document.getElementById("status").innerText = data.message || "✅ Location updated";
+
+        // Show your current marker (blue)
+        if (userMarker) map.removeLayer(userMarker);
+        userMarker = L.marker([latitude, longitude], { title: "You", icon: blueIcon }).addTo(map);
+        map.setView([latitude, longitude], 12);
+
+        // Refresh others
+        loadAllLocations();
+      } catch (error) {
+        console.error("Error updating location:", error);
+        document.getElementById("status").innerText = "❌ Failed to update location";
+      }
+    }
+
+    function handleLocationError(error) {
+      document.getElementById("status").innerText = "⚠️ Location access denied or unavailable.";
+      console.error("Geolocation Error:", error);
+    }
+
+    // ✅ Fetch and show all donors on map
+    async function loadAllLocations() {
+      try {
+        const response = await fetch(`${BACKEND_URL}/api/all-locations`);
+        const users = await response.json();
+
+        // Clear old markers
+        allMarkers.forEach(marker => map.removeLayer(marker));
+        allMarkers = [];
+
+        users.forEach(user => {
+          if (!user.latitude || !user.longitude) return;
+          if (user.email === userEmail) return; // skip self
+
+          const marker = L.marker([user.latitude, user.longitude], { icon: redIcon })
+            .addTo(map)
+            .bindPopup(`<b>${user.first_name} ${user.last_name}</b><br>
+                        Blood Group: <b>${user.blood_type}</b><br>
+                        📧 ${user.email}`);
+          allMarkers.push(marker);
+        });
+      } catch (error) {
+        console.error("Error loading all locations:", error);
+      }
+    }
+
+    // 🔵 Blue marker for current user
+    const blueIcon = L.icon({
+      iconUrl: 'https://maps.google.com/mapfiles/ms/icons/blue-dot.png',
+      iconSize: [32, 32],
+      iconAnchor: [16, 32],
+      popupAnchor: [0, -28]
+    });
+
+    // 🔴 Red marker for other donors
+    const redIcon = L.icon({
+      iconUrl: 'https://maps.google.com/mapfiles/ms/icons/red-dot.png',
+      iconSize: [32, 32],
+      iconAnchor: [16, 32],
+      popupAnchor: [0, -28]
+    });
+
+    // Auto-refresh all donors every 20 seconds
+    setInterval(loadAllLocations, 20000);
+
+    // Initialize map
+    window.onload = initMap;
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Donation History - BLOOD CONNECT</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      margin: 0;
+      padding: 40px 20px;
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, #d83a3a, #8b1e1e);
+      min-height: 100vh;
+      color: #333;
+      display: flex;
+      justify-content: center;
+    }
+    .container {
+      background: #fff8e3;
+      border-radius: 25px;
+      padding: 40px 30px;
+      width: 95%;
+      max-width: 1200px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+      text-align: center;
+    }
+    h1 {
+      font-family: 'Lobster', cursive;
+      font-size: 3rem;
+      color: #d83a3a;
+      margin-bottom: 30px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+    }
+    .donation-entry {
+      background: #fff1e0;
+      border-left: 6px solid #d83a3a;
+      border-radius: 15px;
+      padding: 20px 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: left;
+    }
+    .donation-entry:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+    .date {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #d83a3a;
+      margin-bottom: 8px;
+    }
+    .location, .blood-type, .status {
+      font-size: 0.95rem;
+      margin: 4px 0;
+    }
+    .status.completed {
+      font-weight: 600;
+      color: #2e7d32; 
+    }
+    .status.scheduled {
+      font-weight: 600;
+      color: #f57c00; 
+    }
+    .footer {
+      margin-top: 30px;
+      font-size: 0.95rem;
+    }
+    .footer a {
+      color: #333;
+      text-decoration: none;
+    }
+    @media(max-width: 1024px) { .cards { grid-template-columns: repeat(3, 1fr); } }
+    @media(max-width: 768px)  { .cards { grid-template-columns: repeat(2, 1fr); } }
+    @media(max-width: 500px)  { .cards { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Donation History</h1>
+    <div class="cards">
+      <div class="donation-entry">
+        <div class="date">October 9, 2023</div>
+        <div class="location">DEVA Super Speciality Hospital, Vzm</div>
+        <div class="blood-type">A+</div>
+        <div class="status completed">Completed</div>
+      </div>
+      <div class="donation-entry">
+        <div class="date">December 22, 2023</div>
+        <div class="location">ANITS Hospital, Vizag</div>
+        <div class="blood-type">O-</div>
+        <div class="status completed">Completed</div>
+      </div>
+      <div class="donation-entry">
+        <div class="date">March 12, 2025</div>
+        <div class="location">Gayatri Vidya Parishad Hospital, Vizag</div>
+        <div class="blood-type">B+</div>
+        <div class="status completed">Completed</div>
+      </div>
+      <div class="donation-entry">
+        <div class="date">October 30, 2024</div>
+        <div class="location">Blood Camp, Vizainagarm</div>
+        <div class="blood-type">B-</div>
+        <div class="status completed">Completed</div>
+      </div>
+      <div class="donation-entry">
+        <div class="date">January 20, 2025</div>
+        <div class="location">Lifeline Blood Bank, Vizag</div>
+        <div class="blood-type">O+</div>
+        <div class="status completed">Completed</div>
+      </div>
+      <div class="donation-entry">
+        <div class="date">February 15, 2025</div>
+        <div class="location">Guntur Blood Camp, Guntur</div>
+        <div class="blood-type">AB+</div>
+        <div class="status completed">Completed</div>
+      </div>
+      <div class="donation-entry">
+        <div class="date">April 1, 2025</div>
+        <div class="location">Harappan Laboratories, Bheemli</div>
+        <div class="blood-type">B+</div>
+        <div class="status completed">Completed</div>
+      </div>
+      <div class="donation-entry">
+        <div class="date">October 30, 2025</div>
+        <div class="location">Apollo Hospital, Vizag</div>
+        <div class="blood-type">A+</div>
+        <div class="status scheduled">Scheduled</div>
+      </div>
+      <div class="donation-entry">
+        <div class="date">November 15, 2025</div>
+        <div class="location">GITAM University Blood Camp, Vizag</div>
+        <div class="blood-type">O+</div>
+        <div class="status scheduled">Scheduled</div>
+      </div>
+      <div class="donation-entry">
+        <div class="date">December 5, 2025</div>
+        <div class="location">KIMS Hospital, Vizag</div>
+        <div class="blood-type">AB+</div>
+        <div class="status scheduled">Scheduled</div>
+      </div>
+      <div class="donation-entry">
+        <div class="date">December 20, 2025</div>
+        <div class="location">Apollo Blood Camp, Vizag</div>
+        <div class="blood-type">B-</div>
+        <div class="status scheduled">Scheduled</div>
+      </div>
+    </div>
+    <div class="footer">
+      <p><a href="features.html">Back to Home</a></p>
+    </div>
+  </div>
+</body>
+</html>
