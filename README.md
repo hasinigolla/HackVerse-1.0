@@ -2,6 +2,8 @@
 # BLOOD CONNECT
 Problem Statement - Thousands of patients struggle to find compatible blood donors during emergencies due to slow, uncoordinated systems lacking real-time tracking and alerts. BLOOD CONNECT bridges this gap by providing an intelligent, real-time platform that instantly connects donors, recipients, and hospitals - ensuring faster responses and saving lives.
 
+(Website starts at the page - 'mainPage.html')
+
 Purpose of the Project - The main purpose of BLOOD CONNECT is to eliminate the delay between blood requests and donor availability. Many existing systems are slow or lack proper coordination between hospitals and donors. This project aims to create a reliable  solution that leverages technology to enable instant communication, smart alerts, and live donor tracking.
 
 How BLOOD CONNECT Works - Users can register as act as donors or recipients as per the circumstances. Donors who enable location access  to appear as available nearby. When a recipient raises a blood request, the system identifies and notifies the nearest donors of the required blood type. Emergency-level requests are prioritized with special alert indicators. For those unable to travel, BLOOD CONNECT provides a home collection feature, allowing trained medical professionals to collect and transport the blood safely under proper conditions. This ensures no donor is left out due to distance or mobility issues.
