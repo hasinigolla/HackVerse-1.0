@@ -1,0 +1,393 @@
+[{
+  "_id": {
+    "$oid": "67f26523139e91cfc881896d"
+  },
+  "first_name": "Vasavi",
+  "last_name": "Gudla",
+  "dob": "2005-02-17",
+  "aadhar": "987654321987",
+  "blood_type": "O+",
+  "email": "vasavigudla@gmail.com",
+  "password": "$2b$10$4PAFAaOAPK.GD2PAhKgKROuxdbzVOsheo4w4uz5HBjuG34Gb5B0cK",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f26586139e91cfc8818970"
+  },
+  "first_name": "Yogitha",
+  "last_name": "Jyothirmai",
+  "dob": "2005-12-03",
+  "aadhar": "123456789012",
+  "blood_type": "O+",
+  "email": "yogithajyothirmai03@gmail.com",
+  "password": "$2b$10$yiwmth1OdHOuufuQ5wjY0eWIIpvtSzDcEqVUZcvh4wUe3BfzDYy1.",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f265bb139e91cfc8818973"
+  },
+  "first_name": "Hasini",
+  "last_name": "Golla",
+  "dob": "2006-05-04",
+  "aadhar": "831409849356",
+  "blood_type": "O+",
+  "email": "hasinigolla456@gmail.com",
+  "password": "$2b$10$mDSJDl2O4Y22J6m0d1HuveygRAV3jNaHcs.30ZKzbzpvF.bUUIria",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f4afb5200bb2606cc4461d"
+  },
+  "first_name": "Shrishti",
+  "last_name": "Shetty",
+  "email": "shrishtishetty@gmail.com",
+  "dob": "1999-12-16",
+  "weight": "65",
+  "aadhar": "1432514325143",
+  "phone": "83674333656",
+  "gender": "Female",
+  "blood_type": "A+",
+  "address": "Akkayapalem, Visakhapatnam",
+  "password": "$2b$10$pie.KL1sGEdBqB2kuxd4rurfj519gxV6hmkp83GmLTG91ZO12V3Cq",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f4bd977c72ac76e6a4290d"
+  },
+  "first_name": "Sai Babu",
+  "last_name": "Podagatlapalli",
+  "email": "saibabu@gmail.com",
+  "dob": "2005-03-23",
+  "weight": "65",
+  "aadhar": "482353356555",
+  "phone": "9392835917",
+  "gender": "Male",
+  "blood_type": "B+",
+  "address": "Rajahmundry",
+  "password": "$2b$10$Pc0ZfPTK0zgr8r9Q80J7COV0B52qYsrWMguYM0YolCQ1zAQxDt26C",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f4be197c72ac76e6a42912"
+  },
+  "first_name": "Suresh",
+  "last_name": "Podagatlapalli",
+  "email": "suresh@gmail.com",
+  "dob": "1979-12-15",
+  "weight": "70",
+  "aadhar": "652354661234",
+  "phone": "8522031205",
+  "gender": "Male",
+  "blood_type": "B+",
+  "address": "West Godavari",
+  "password": "$2b$10$FjxktQ1765H2kiCZtkK3bOllJLsnlEa7nGUtykOWqHg.dx9BCc3ZS",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67f4c8e37c72ac76e6a42917"
+  },
+  "first_name": "PUSHPAK",
+  "last_name": "K",
+  "email": "323103310099@GVPCE.AC.IN",
+  "dob": "2006-07-03",
+  "weight": "70",
+  "aadhar": "123456789012",
+  "phone": "9392600856",
+  "gender": "Male",
+  "blood_type": "O+",
+  "address": "VZM",
+  "password": "$2b$10$d/1U9ymio/xIsqjDmjOKduOaDN1mnWgOz7GWL49AqnqQnYtny.6xS",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fbc2e9985ec4c9080a6cfb"
+  },
+  "first_name": "Sujatha",
+  "last_name": "Golla",
+  "email": "sujathagolla542@gmail.com",
+  "dob": "1972-08-23",
+  "weight": "64",
+  "aadhar": "875167732197",
+  "phone": "8096223156",
+  "gender": "Female",
+  "blood_type": "O+",
+  "address": "80 feet road, Visakhapatnam",
+  "password": "$2b$10$sq5TooIuJgWSUfSSWY5svO7ySAiFKX1T/ELiIFkyKd5Y.5b4t38A2",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fbc372985ec4c9080a6cfe"
+  },
+  "first_name": "Chandra",
+  "last_name": "Golla",
+  "email": "purnachandrarao@gmail.com",
+  "dob": "1971-10-30",
+  "weight": "65",
+  "aadhar": "1432514325143",
+  "phone": "9848281595",
+  "gender": "Male",
+  "blood_type": "O+",
+  "address": "80 feet road, Visakhapatnam",
+  "password": "$2b$10$4HignGef.T5CDP7gxPJVQ.vLzdQyph/cXv783NfN8CGVRVjkdF0gq",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fcca543dcc205f42a4cb69"
+  },
+  "first_name": "Harshini",
+  "last_name": "Golla",
+  "email": "harshinigolla@gmail.com",
+  "dob": "2009-12-19",
+  "weight": "35",
+  "aadhar": "831409849356",
+  "phone": "8096223156",
+  "gender": "Female",
+  "blood_type": "O+",
+  "address": "80 feet road, Visakhapatnam",
+  "password": "$2b$10$1SWVUlSFEox.i5SzGbHsXefRSEnI6hEZ8X2agPg7M0WYNuR6rJq2m",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fd52d43b8bcdca73717dc4"
+  },
+  "first_name": "Chihnitha",
+  "last_name": "Manepalli",
+  "email": "chihnithamanepalli@gmail.com",
+  "dob": "2005-12-13",
+  "weight": "59",
+  "aadhar": "1432514325143",
+  "phone": "8639588110",
+  "gender": "Female",
+  "blood_type": "B+",
+  "address": "Ram Nagar, Visakhapatnam",
+  "password": "$2b$10$fsgfZeezmfamL0EU.Dv0M.pttdzK1UKD1KeM4/IziwWv5DnHWPPCu",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67fd5a26786321efff52efb7"
+  },
+  "first_name": "Arjun",
+  "last_name": "A",
+  "email": "arjunA@gmail.com",
+  "dob": "1985-04-08",
+  "weight": "65",
+  "aadhar": "1432514325143",
+  "phone": "9988776655",
+  "gender": "Male",
+  "blood_type": "O+",
+  "address": "Hills Valley, Hyderabad",
+  "password": "$2b$10$5OONpjjV5KM2gLnc5.MX0.WzVPIvHXzA/boL2yGEama7H1rcG5TUG",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "680fc2f0b8b50289ef40cc59"
+  },
+  "first_name": "Dev",
+  "last_name": "Hiramand",
+  "email": "devhiramand@gmail.com",
+  "dob": "2001-12-12",
+  "weight": "60",
+  "aadhar": "123456789012",
+  "phone": "9898989898",
+  "gender": "Male",
+  "blood_type": "O-",
+  "address": "HB Colony, Visakhapatnam",
+  "password": "$2b$10$S06VTAf1ecSXei2u/br6yuFxF.IbbmVYVgEd7BXSHwY5mP/Bxl5kq",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "680fcaa8ad88ce2c675be18e"
+  },
+  "first_name": "Karthikeya",
+  "last_name": "Gummakonda",
+  "email": "karthikeyagummakonda@gmail.com",
+  "dob": "1995-09-11",
+  "weight": "65",
+  "aadhar": "789546321087",
+  "phone": "7978878787",
+  "gender": "Male",
+  "blood_type": "A-",
+  "address": "Jubliee Hills, Hyderabad",
+  "password": "$2b$10$VgTwv7W0JcknIqv/LouJqeR.lKdivKJt2VVK2BpbumUzQy/6I0U7a",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "680fcaeaad88ce2c675be191"
+  },
+  "first_name": "Sneha",
+  "last_name": "Shankar",
+  "email": "sneha@gmail.com",
+  "dob": "2005-02-27",
+  "weight": "59",
+  "aadhar": "831409849356",
+  "phone": "6302534809",
+  "gender": "Female",
+  "blood_type": "O-",
+  "address": "Beach road, Visakhapatnam",
+  "password": "$2b$10$oaDALSa7kGu.I9eMuQJMMOEyUv0plF/7Ad1KDGJmrK8ZlZUX1qqBe",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "680fcb2cad88ce2c675be194"
+  },
+  "first_name": "Kanishka",
+  "last_name": "Yadla",
+  "email": "kanishkayadla@gmail.com",
+  "dob": "2005-08-09",
+  "weight": "54",
+  "aadhar": "831409849356",
+  "phone": "787897878",
+  "gender": "Female",
+  "blood_type": "O+",
+  "address": "Railway New Colony, Visakhapatnam",
+  "password": "$2b$10$65w9ClYmXEqvKI.YlfdC5OPZ4wCo8X5aPQ.LnDkN3khAP9VzjULD2",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68ee4defb44001ad3701261c"
+  },
+  "first_name": "Anjali",
+  "last_name": "Gudla",
+  "email": "anjaligudla@gmail.com",
+  "dob": "2005-02-17",
+  "weight": "50",
+  "aadhar": "123456789875",
+  "phone": "9347302029",
+  "gender": "Female",
+  "blood_type": "O+",
+  "address": "Kommadhi, Visakhapatnam",
+  "password": "$2b$10$78fXh3abDRmdvwS/ig6PlOyt0k6pIbLBhLMtG/GaPTxrWsU7Iiowa",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68ef5c1fe2a6ab0e4b09d2bf"
+  },
+  "first_name": "Poojitha",
+  "last_name": "Kuna",
+  "email": "poojithakuna008@gmail.com",
+  "dob": "2006-08-22",
+  "weight": "51",
+  "aadhar": "547430415323",
+  "phone": "9390776995",
+  "gender": "Female",
+  "blood_type": "B+",
+  "address": "Kommadhi, Vishapatnam",
+  "password": "$2b$10$jUV5y27naqYCAJt9p5X7vuE/xuw6IINMp17CKUbbCXPyfrHcpzUXC",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68f119b3e2a6ab0e4b09d2e3"
+  },
+  "first_name": "Bhavya",
+  "last_name": "harshini",
+  "email": "bhaviharshu@gmail.com",
+  "dob": "2009-12-19",
+  "weight": "40",
+  "aadhar": "483778838700",
+  "phone": "123456789",
+  "gender": "Female",
+  "blood_type": "O-",
+  "address": "tsn colony",
+  "password": "$2b$10$fhfJfD79L8jBJDHYK/bJUeN29dVXkYZsI9zELtaYyAytT09gyylb2",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68f32a9ae2a6ab0e4b09d2f6"
+  },
+  "first_name": "Gudipati Venkata",
+  "last_name": "Manasa",
+  "email": "gudipativenkatamanasa@gmail.com",
+  "dob": "2005-10-04",
+  "weight": "51",
+  "aadhar": "101020203030",
+  "phone": "9346480573",
+  "gender": "Female",
+  "blood_type": "B+",
+  "address": "Rajamundry",
+  "password": "$2b$10$MQ1JHXBJKI2MAtFwF2FQ5Ou1nNeUt8mrwpAr/7kJ57hhXh6vVEcBi",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68f3c53c2114a54d3a53df95"
+  },
+  "first_name": "Keerthy",
+  "last_name": "Suresh",
+  "email": "keerthysuresh@gmail.com",
+  "dob": "1996-04-01",
+  "weight": "70",
+  "aadhar": "789848681838",
+  "phone": "8522163479",
+  "gender": "Female",
+  "blood_type": "AB+",
+  "address": "Carshed, Vishakapatnam",
+  "password": "$2b$10$sx5i4Ykg/VCrZZ.VrdcURuSf1kiXDnNsjomRtWcf1pUhJefdDZ.gy",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68f41b86ced624267e58841d"
+  },
+  "first_name": "Demo",
+  "last_name": "User",
+  "email": "demo@blood.com",
+  "dob": "1990-01-01",
+  "weight": "60",
+  "aadhar": "123456789012",
+  "phone": "9999999999",
+  "gender": "Other",
+  "blood_type": "A+",
+  "address": "Demo Address",
+  "password": "$2b$10$gv9fgMVE2Ld/fPWvUdfgL.2Gi1Cyiahj.H9Vb5p83pSYrj0/ZT84C",
+  "latitude": null,
+  "longitude": null,
+  "lastUpdated": null,
+  "donationCount": 0,
+  "points": 0,
+  "badges": [],
+  "lastDonationDate": null,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "68f45c238c40a46eef00d60e"
+  },
+  "first_name": "Ram",
+  "last_name": "Yerni",
+  "email": "ramyerni@gmail.com",
+  "dob": "2006-12-04",
+  "weight": "65",
+  "aadhar": "858535351515",
+  "phone": "8367433656",
+  "gender": "Male",
+  "blood_type": "A-",
+  "address": "Duvvada",
+  "password": "$2b$10$Xgzc0I64qyJytVA/lzKvhOKVKaAnnsslTokoIp3RngcDO06q4Aza2",
+  "latitude": null,
+  "longitude": null,
+  "lastUpdated": null,
+  "donationCount": 0,
+  "points": 0,
+  "badges": [],
+  "lastDonationDate": null,
+  "__v": 0
+}]
